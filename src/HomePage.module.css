@@ -1,0 +1,158 @@
+/* HomePage.module.css */
+
+:root {
+  --dark-bg: #121212;
+  --light-bg: #ffffff;
+  --dark-text: #e0e0e0;
+  --light-text: #333333;
+  --primary-color: #4caf50; /* For button highlights or accents */
+  --secondary-color: #ff9800;
+  --border-color: gainsboro;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px; /* Space between grid items */
+  padding: 20px 160px; /* Top/bottom 20px, left/right 160px */
+  transition: background-color 0.3s ease;
+}
+
+/* Light and Dark Mode Switch */
+.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-bg);
+  padding: 20px;
+  border: 0.4px solid var(--border-color);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Project Card 1 Styling */
+.projectCard1 {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.in_projectcard1 img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.projectCard1 p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--light-text);
+}
+
+.projectCard1 strong {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+/* Project Card 2 Styling */
+.projectCard2 {
+  grid-column: span 1;
+  background-image: url('https://images.ui8.net/res/robot/image/upload/iir1ulncnejy0ehcak47/1502284824.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  color: white;
+}
+
+.head2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: white;
+}
+
+/* Project Card 3 (Skills) Styling */
+.skillsContainer {
+  grid-column: span 2;
+}
+
+.projectCard3 {
+  background-image: url('https://devakshay.vercel.app/media/Topographic-EZTJWYCO.svg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.skillIcon {
+  font-size: 3rem;
+  margin: 10px;
+  color: var(--primary-color);
+}
+
+/* Carousel Container */
+.carouselContainer {
+  grid-column: span 4;
+}
+
+.carouselImage {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+/* Contact Card */
+.contactCard {
+  grid-column: span 2;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  color: white;
+}
+
+/* Dark Mode Toggle */
+.darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.toggleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.toggleButton.dark {
+  background-color: var(--secondary-color);
+}
+
+/* Project Link Styling */
+.projectLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.projectLink:hover {
+  background-color: var(--secondary-color);
+}

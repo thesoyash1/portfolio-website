@@ -1,0 +1,35 @@
+.container_nav {
+  background-color: rgb(247 242 242 / var(--tw-bg-opacity));
+}
+
+
+.navbar_custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: backdrop-filter 0.3s ease, opacity 0.3s ease; /* Existing transition */
+  border-bottom: 0.2px solid gainsboro; /* Add border */
+  box-shadow: 0 2px 5px rgba(210, 208, 208, 0.2); 
+}
+
+.navbar_brand_custom {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Cursive', cursive; 
+  color: #000;
+  
+}
+
+.nav_links_custom a {
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.nav_links_custom a:hover {
+  color: #000;
+  background-color: #f2f2f2; /* Color changes to black on hover */
+  padding: 5px;
+  border-radius: 5px;
+}

@@ -1,0 +1,97 @@
+.contactPage {
+  width: 1167px; 
+  height: 620px; 
+  padding: 70px;
+  background-image: linear-gradient(115deg, #a7d5f2, #efc6ff);
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  margin: auto; 
+  margin-bottom: 90px;
+}
+
+.heading {
+  font-size: 4rem;
+  color: #333;
+  margin-bottom: 20px; 
+}
+
+.subheading {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  position: relative;
+  margin-bottom: 30px; 
+}
+
+.label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-size: 16px;
+  color: #666;
+  transition: 0.3s ease all;
+  pointer-events: none;
+}
+
+.inputField {
+  width: 80%;
+  padding: 10px 10px 10px 10px;
+  border: none;
+  border-bottom: 2px solid #0e0e0e;
+  background: transparent;
+  color: #000000;
+  outline: none;
+  font-size: 16px;
+}
+
+.inputField:focus {
+  border-bottom: 2px solid #000000; 
+}
+
+.inputField:focus ~ .label,
+.inputField:not(:placeholder-shown) ~ .label {
+  display: none;
+}
+
+.textArea {
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #000000;
+  background: transparent;
+  outline: none;
+  width: 80%;
+  height: 100px;
+}
+
+.textArea:focus {
+  border-bottom: 2px solid #000000;
+}
+
+.textArea:focus ~ .label,
+.textArea:not(:placeholder-shown) ~ .label {
+  display: none;
+}
+
+.sendButton {
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 140px;
+}
+
+.sendButton:hover {
+  background-color: #191d19;
+  cursor: pointer;
+
+}

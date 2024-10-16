@@ -1,0 +1,73 @@
+.skillpage_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.inner_skillpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.left_img_container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.right_img_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner_right_box {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+}
+
+.collection_skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.collection_skills ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: contents;
+}
+
+.collection_skills li {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: color 0.3s ease, font-size 0.3s ease;
+  box-sizing: border-box;
+}
+
+.collection_skills li:hover {
+  color: blue;
+  font-size: 1.26rem;
+}
+
+@media (max-width: 768px) {
+  .collection_skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .collection_skills {
+    grid-template-columns: 1fr;
+  }
+}

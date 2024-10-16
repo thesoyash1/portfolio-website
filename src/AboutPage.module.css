@@ -1,0 +1,95 @@
+.full_aboutPage {
+  display: flex;
+  justify-content: center;
+}
+
+.about_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 80%;
+  max-width: 1400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.grid1 {
+  grid-column: 1 / 3;
+  box-shadow: 10px;
+  border: 0.4px solid gainsboro;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+}
+.grid1_head_bio{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: larger;
+}
+
+.grid2 {
+  grid-column: 1 / 2;
+  background-color: white;
+  box-shadow: 10px;
+  border: 0.4px solid gainsboro;
+  padding: 25px;
+  border-radius: 10px;
+  color: black;
+  max-height: 55%;
+}
+
+.grid3 {
+  grid-column: 2 / 3;
+  background-color: white;
+  box-shadow: 10px;
+  border: 0.4px solid gainsboro;
+  padding: 25px;
+  border-radius: 10px;
+}
+.head_of_grid{
+  font-weight: 700;
+    color: rgb(84 84 206);
+    font-size: 2rem;
+
+}
+.head_of_grid_one{
+  position: relative;
+  top: 25px;
+}
+
+.in_grid2_body{
+  color: white; /* Text inside black boxes is white */
+  padding: 15px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.in_grid3_body {
+  color: white; /* Text inside black boxes is white */
+  border-radius: 10px;
+}
+
+.in_grid1 img {
+  max-width: 130px;
+  border-radius: 50%;
+}
+.in_grid1{
+  display: flex;
+  gap: 50px;
+}
+
+.in_grid1_item1,
+.in_grid1_item2,
+.in_grid1_item3 {
+  margin-bottom: 15px;
+  background-color: black;
+  color: white; /* Text inside black boxes is white */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+h2, h3, h4 {
+  margin: 10px 0;
+  font-size: large;
+}
