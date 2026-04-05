@@ -1,35 +1,184 @@
-.container_nav {
-  background-color: rgb(247 242 242 / var(--tw-bg-opacity));
+.navWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0;
+  transition: all 0.4s ease;
 }
 
-
-.navbar_custom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: backdrop-filter 0.3s ease, opacity 0.3s ease; /* Existing transition */
-  border-bottom: 0.2px solid gainsboro; /* Add border */
-  box-shadow: 0 2px 5px rgba(210, 208, 208, 0.2); 
+/* Glassmorphism Logic */
+.light {
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.navbar_brand_custom {
-  font-size: 24px;
-  font-weight: bold;
-  font-family: 'Cursive', cursive; 
-  color: #000;
-  
+.dark {
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.nav_links_custom a {
-  color: #000;
-  font-size: 18px;
-  text-decoration: none;
+.customNavbar {
+  border: none !important;
+}
+
+/* Brand/Logo */
+.brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: inherit !important;
+}
+
+.brand span {
+  color: #ff9800; /* Your Brand Orange */
+}
+
+/* Nav Links */
+.navLink {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 8px 20px !important;
+  color: inherit !important;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  opacity: 1;
+  color: #ff9800 !important;
+  transform: translateY(-2px);
+}
+
+/* Specialized Contact Button */
+.contactBtn {
+  background: #ff9800;
+  color: white !important;
+  padding: 10px 25px !important;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
   margin-left: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
 }
 
-.nav_links_custom a:hover {
-  color: #000;
-  background-color: #f2f2f2; /* Color changes to black on hover */
-  padding: 5px;
-  border-radius: 5px;
+.contactBtn:hover {
+  background: #e68a00;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+/* Dark Mode Overrides */
+.dark .navLink:hover {
+  color: #fff !important;
+}
+
+/* Mobile Adjustments */
+.toggle {
+  border: none !important;
+  outline: none !important;
+}
+
+@media (max-width: 991px) {
+  .navWrapper {
+    background: #ffffff; /* Solid on mobile for readability */
+  }
+  .dark .navWrapper {
+    background: #111111;
+  }
+  .contactBtn {
+    margin-left: 0;
+    margin-top: 15px;
+    display: inline-block;
+    width: fit-content;
+  }
+}
+
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Resume Button Styling */
+.resumeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+  color: #ff9800;
+  background: transparent;
+}
+
+.resumeBtn:hover {
+  background: rgba(255, 152, 0, 0.1);
+  border-color: #ff9800;
+  color: #ff9800;
+  transform: translateY(-1px);
+}
+
+.resumeBtn svg {
+  font-size: 0.9rem;
+}
+
+/* Ensure mobile looks clean */
+@media (max-width: 576px) {
+  .resumeBtn span {
+    display: none; /* Only show icon on very small screens to save space */
+  }
+  .brandGroup {
+    gap: 10px;
+  }
+}
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.resumeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid rgba(255, 152, 0, 0.4);
+  color: #ff9800;
+  background: transparent;
+}
+
+.resumeBtn:hover {
+  background: #ff9800;
+  color: #ffffff;
+  border-color: #ff9800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+}
+
+.resumeBtn svg {
+  font-size: 1rem;
+}
+
+/* Responsive adjustment for small phones */
+@media (max-width: 480px) {
+  .resumeBtn span {
+    display: none; /* Shows only the icon to prevent crowding on small screens */
+  }
+  .brandGroup {
+    gap: 8px;
+  }
 }

@@ -1,158 +1,212 @@
-/* HomePage.module.css */
-
-:root {
-  --dark-bg: #121212;
-  --light-bg: #ffffff;
-  --dark-text: #e0e0e0;
-  --light-text: #333333;
-  --primary-color: #4caf50; /* For button highlights or accents */
-  --secondary-color: #ff9800;
-  --border-color: gainsboro;
+/* Full Page Logic */
+.pageWrapper {
+  min-height: 100vh;
+  width: 100%;
+  transition: background 0.5s ease, color 0.5s ease;
+  padding: 40px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  gap: 20px; /* Space between grid items */
-  padding: 20px 160px; /* Top/bottom 20px, left/right 160px */
-  transition: background-color 0.3s ease;
+.light {
+  background-color: #f4f7f6;
+  color: #1a1a1a;
 }
 
-/* Light and Dark Mode Switch */
 .dark {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
+  background-color: #080808;
+  color: #f0f0f0;
 }
 
+/* Grid Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(160px, auto);
+  gap: 20px;
+}
+
+/* Bento Card Base */
 .card {
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.light .card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.dark .card {
+  background: #121212;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Bio Section */
+.bioCard {
+  grid-column: span 3;
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  gap: 30px;
+}
+
+.avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff9800;
+}
+
+.bioText h1 span {
+  color: #ff9800;
+}
+
+/* Project Card + Animation */
+.projectCard {
+  grid-column: span 1;
+  grid-row: span 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--light-bg);
-  padding: 20px;
-  border: 0.4px solid var(--border-color);
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
 }
 
-/* Project Card 1 Styling */
-.projectCard1 {
-  grid-column: span 2;
-  text-align: center;
+.projectImageContent {
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
-.in_projectcard1 img {
+.bgImage {
   width: 100%;
-  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.projectCard1 p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: var(--light-text);
-}
-
-.projectCard1 strong {
-  font-weight: bold;
-  color: var(--secondary-color);
-}
-
-/* Project Card 2 Styling */
-.projectCard2 {
-  grid-column: span 1;
-  background-image: url('https://images.ui8.net/res/robot/image/upload/iir1ulncnejy0ehcak47/1502284824.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  color: white;
-}
-
-.head2 {
-  font-size: 2rem;
-  margin: 10px 0;
-  color: white;
-}
-
-/* Project Card 3 (Skills) Styling */
-.skillsContainer {
-  grid-column: span 2;
-}
-
-.projectCard3 {
-  background-image: url('https://devakshay.vercel.app/media/Topographic-EZTJWYCO.svg');
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
-  border-radius: 10px;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 152, 0, 0.8);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   align-items: center;
-}
-
-.skillIcon {
-  font-size: 3rem;
-  margin: 10px;
-  color: var(--primary-color);
-}
-
-/* Carousel Container */
-.carouselContainer {
-  grid-column: span 4;
-}
-
-.carouselImage {
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-}
-
-/* Contact Card */
-.contactCard {
-  grid-column: span 2;
-  text-align: center;
-  padding: 20px;
-  background-color: var(--secondary-color);
-  border-radius: 10px;
-  color: white;
-}
-
-/* Dark Mode Toggle */
-.darkModeToggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-}
-
-.toggleButton {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.toggleButton.dark {
-  background-color: var(--secondary-color);
-}
+.projectCard:hover .bgImage { transform: scale(1.1); }
+.projectCard:hover .overlay { opacity: 1; }
 
-/* Project Link Styling */
-.projectLink {
+.viewBtn {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
-  padding: 10px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.projectLink:hover {
-  background-color: var(--secondary-color);
+.cardLabel {
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Skills Bento Categories */
+.skillsBento {
+  grid-column: span 2;
+  grid-row: span 2;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skillGroup h4 {
+  margin-bottom: 12px;
+  color: #ff9800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.iconGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 1.8rem;
+}
+
+/* Connect Card */
+.connectCard {
+  grid-column: span 2;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.socialLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.socialLinks a {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.contactFooter {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Theme Toggle FAB */
+.themeToggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #ff9800;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .container { grid-template-columns: repeat(2, 1fr); }
+  .bioCard { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+  .container { grid-template-columns: 1fr; }
+  .bioCard, .projectCard, .skillsBento, .connectCard { grid-column: span 1; }
 }

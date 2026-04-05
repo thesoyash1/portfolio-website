@@ -1,59 +1,93 @@
-import React from 'react';
-import styles from './AboutPage.module.css'; // Import the CSS module
+import PropTypes from 'prop-types';
+import { FaBriefcase, FaGraduationCap, FaCode } from 'react-icons/fa';
+import { FiMail, FiMapPin } from 'react-icons/fi';
+import styles from './AboutPage.module.css';
 
-const AboutPage = () => {
+const AboutPage = ({ darkMode }) => {
   return (
-    <>
-      <div className={styles.full_aboutPage}>
-        <div className={styles.about_container}>
-          <div className={styles.grid1}>
-            <div className={styles.in_grid1}>
-              <img src="https://vaibhavdev.vercel.app/assets/avtar-qKT6WN_1.png" alt="Profile Pic" />
-              <h2 className={`${styles.head_of_grid} ${styles.head_of_grid_one}`}>Hey I'm Soyash Tiwari</h2>
+    <div className={`${styles.pageWrapper} ${darkMode ? styles.dark : styles.light}`}>
+      <div className={styles.container}>
+        
+        {/* Intro Section */}
+        <div className={`${styles.card} ${styles.heroCard}`}>
+          <div className={styles.profileHeader}>
+            <img src="https://vaibhavdev.vercel.app/assets/avtar-qKT6WN_1.png" alt="Soyash Tiwari" />
+            <div className={styles.titleInfo}>
+              <h1>Soyash <span>Tiwari</span></h1>
+              <p><FaCode /> Full Stack Developer • Technical Associate</p>
             </div>
-            <p className={styles.grid1_head_bio}>
-              An enthusiastic Software Developer from Madhya Pradesh, India, with a strong passion for Full Stack Development. With hands-on experience in developing impactful solutions, I am dedicated to leveraging my skills to drive innovation and deliver high-quality results.
-            </p>
+          </div>
+          <p className={styles.bio}>
+            I am a **Technical Associate** and Full Stack Developer with a passion for architecting high-performance digital solutions. 
+            With expertise across the **MERN stack**, **Next.js**, and **Shopify ecosystems**, I specialize in building 
+            seamless end-to-end applications that bridge complex backend logic with premium, intuitive user interfaces.
+          </p>
+        </div>
+
+        {/* Experience Section */}
+        <div className={`${styles.card} ${styles.experienceCard}`}>
+          <div className={styles.cardHeader}>
+            <FaBriefcase className={styles.icon} />
+            <h2>Professional Journey</h2>
           </div>
           
-          <div className={styles.grid2}>
-            <div className={styles.in_grid2_head}>
-              <h2 className={styles.head_of_grid}>Experience</h2>
-            </div>
-            <div className={styles.in_grid2_body}>
-              <h3>Elsner Technology Pvt Ltd - 2024</h3>
-              <h2>Associate Software Developer</h2>
-              <p>
-                Work as a shopify app developer.
+          <div className={styles.timeline}>
+            {/* OrangeMantra - Promoted Role */}
+            <div className={styles.timelineItem}>
+              <div className={styles.timeLineHeader}>
+                <h3>OrangeMantra Technology Pvt Ltd</h3>
+                <span className={styles.location}><FiMapPin /> Gurugram</span>
+              </div>
+              <h4 className={styles.role}>Technical Associate (Promoted from Jr. Dev)</h4>
+              <p className={styles.workDesc}>
+                Engineered full-stack features for healthcare and eCommerce platforms. Developed scalable **Node.js** backends, integrated **GraphQL APIs**, and crafted responsive **Next.js/React** frontends with complex state management and secure payment gateways.
               </p>
-            </div>
-          </div>
-          
-          <div className={styles.grid3}>
-            <div className={styles.in_grid_head}>
-              <h2 className={styles.head_of_grid}>Education</h2>
-            </div>
-            <div className={styles.in_grid3_body}>
-              <div className={styles.in_grid1_item1}>
-                <h4>Bansal Institute of Science & Technology Bhopal - 2020-2024</h4>
-                <h2>Bachelors of Technology </h2>
-                <p>Computer Science & Engineering - 8.7 CGPA</p>
+              <div className={styles.techPills}>
+                <span>Full Stack</span> <span>Next.js</span> <span>Node.js</span> <span>GraphQL</span> <span>MongoDB</span>
               </div>
-              <div className={styles.in_grid1_item2}>
-                <h4>Saraswati Higher Secondary School Rewa MP - 2019-2020</h4>
-                <h2>12th (PCM) - 74.4%</h2>
-                <h2>8.7 CGPA</h2>
+            </div>
+
+            {/* Elsner - Intern Role */}
+            <div className={styles.timelineItem}>
+              <div className={styles.timeLineHeader}>
+                <h3>Elsner Technology Pvt Ltd</h3>
+                <span className={styles.location}>2024</span>
               </div>
-              <div className={styles.in_grid1_item3}>
-                <h4>Saraswati Higher Secondary School Rewa MP - 2017-2018</h4>
-                <h2>10th - 76.6%</h2>
+              <h4 className={styles.role}>MERN Stack Intern (Shopify Team)</h4>
+              <p className={styles.workDesc}>
+                Contributed to the Shopify App Development team using the **MERN stack**. Developed custom app features, UI extensions, and explored automated store operations as part of the core development internship.
+              </p>
+              <div className={styles.techPills}>
+                <span>MERN</span> <span>Shopify API</span> <span>Remix</span> <span>React</span>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Education Section */}
+        <div className={`${styles.card} ${styles.educationCard}`}>
+          <div className={styles.cardHeader}>
+            <FaGraduationCap className={styles.icon} />
+            <h2>Education</h2>
+          </div>
+          
+          <div className={styles.eduItem}>
+            <h4>B.Tech in Computer Science</h4>
+            <p>Bansal Institute of Science & Technology • 2024</p>
+            <span className={styles.grade}>8.7 CGPA</span>
+          </div>
+
+          <div className={styles.eduItem}>
+            <h4>Higher Secondary (12th PCM)</h4>
+            <p>Saraswati Higher Secondary School • 2020</p>
+            <span className={styles.grade}>74.4%</span>
+          </div>
+        </div>
+
       </div>
-    </>
+    </div>
   );
 };
 
+AboutPage.propTypes = { darkMode: PropTypes.bool.isRequired };
 export default AboutPage;
