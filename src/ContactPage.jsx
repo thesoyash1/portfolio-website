@@ -54,8 +54,8 @@ const ContactPage = ({ darkMode }) => {
           </div>
 
           <div className={styles.socialGrid}>
-            <a href="https://linkedin.com/in/soyash-tiwari-7b9172210/" target="_blank" rel="noreferrer"><FiLinkedin /></a>
-            <a href="https://twitter.com/..." target="_blank" rel="noreferrer"><FiTwitter /></a>
+            <a href="https://www.linkedin.com/in/soyash-tiwari/" target="_blank" rel="noreferrer"><FiLinkedin /></a>
+            <a href="https://x.com/thesoyash" target="_blank" rel="noreferrer"><FiTwitter /></a>
             <a href="https://instagram.com/thesoyash" target="_blank" rel="noreferrer"><FiInstagram /></a>
           </div>
         </div>

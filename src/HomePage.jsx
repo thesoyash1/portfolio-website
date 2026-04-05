@@ -61,10 +61,10 @@ const HomePage = ({ darkMode, onToggleDarkMode }) => {
         <div className={`${styles.card} ${styles.connectCard}`}>
           <h3>Let's Connect</h3>
           <div className={styles.socialLinks}>
-            <a href="https://linkedin.com/..." target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/..." target="_blank">Twitter</a>
-            <a href="https://github.com/..." target="_blank">GitHub</a>
-            <a href="https://instagram.com/..." target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/soyash-tiwari/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/thesoyash" target="_blank">Twitter</a>
+            <a href="hhttps://github.com/thesoyash1" target="_blank">GitHub</a>
+            <a href="https://instagram.com/thesoyash" target="_blank">Instagram</a>
           </div>
           <Link to="/contact" className={styles.contactFooter}>
             Get in touch <GoArrowUpRight />
